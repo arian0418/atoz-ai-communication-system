@@ -1,21 +1,41 @@
 # A to Z Power Washing — AI Customer Communication System
 
-A working class-project prototype that implements the customer communication workflow proposed for A to Z Power Washing.
+A complete, runnable class-project implementation of the customer communication workflow proposed for A to Z Power Washing.
 
-## What it does
+## Implemented features
 
-- Customer-facing communication assistant for common service, quote, and scheduling questions
-- Structured quote and appointment intake
-- SQLite database for leads and conversation history
-- Owner dashboard with lead status tracking
-- Central conversation log
-- Human handoff behavior for questions the prototype should not answer
-- Local, persistent data storage
+### Customer side
+- Automated customer assistant for supported service, quote, photo, service-area, and scheduling questions
+- Safe human handoff for complaints, damage, emergencies, and uncertain requests
+- Quote intake with customer/contact information
+- Service selection
+- Property address and job details
+- Preferred appointment date/time
+- Multiple job-photo uploads
+- Clear distinction between a requested appointment and a confirmed appointment
 
-The prototype is intentionally honest about its scope: it does **not** claim to be Numa's proprietary software, and it does not pretend to be connected to a live business phone number. It demonstrates the proposed workflow in a runnable system that can later be connected to real SMS/phone services.
+### Business side
+- Central owner dashboard
+- Lead pipeline: New → Contacted → Quoted → Booked → Completed / Closed
+- Detailed lead view
+- Internal follow-up notes
+- Job-photo review
+- Appointment request management
+- Central conversation history
+- CSV lead export
+- Reporting for lead status and service demand
+
+### Database
+SQLite stores:
+- leads
+- messages
+- appointments
+- photos
+- internal notes
+
+This gives the project real SQL-backed persistence without requiring a separate database server.
 
 ## Technology
-
 - Python
 - Streamlit
 - SQLite / SQL
@@ -23,34 +43,30 @@ The prototype is intentionally honest about its scope: it does **not** claim to 
 
 ## Run on Windows
 
-1. Install Python 3.10 or newer.
-2. Open Command Prompt in this repository.
-3. Install dependencies:
-
 ```
 python -m pip install -r requirements.txt
-```
-
-4. Start the application:
-
-```
 python -m streamlit run app.py
 ```
 
-5. Streamlit will open the application in your browser.
+The application creates `atoz_powerwashing.db` automatically.
 
-## Demo flow
+## Recommended class demo
 
-1. Open **Customer Assistant** and ask: `How much does driveway cleaning cost?`
-2. Open **Quote & Scheduling** and submit a sample customer request.
-3. Open **Owner Dashboard** and show that the lead appeared automatically.
-4. Change the lead from **New** to **Contacted**, **Quoted**, or **Booked**.
-5. Open **Conversations** to demonstrate centralized communication records.
+1. Open **Customer Assistant** and ask about a driveway-cleaning quote.
+2. Show that the assistant does not invent a price.
+3. Open **Quote & Scheduling**, enter a sample customer, attach a sample property photo, and submit.
+4. Open **Owner Dashboard** and show the new lead.
+5. Open **Lead Details**, add an internal note, and move the lead through the pipeline.
+6. Open **Appointments** and confirm the request.
+7. Open **Conversations** to show centralized records.
+8. Open **Reports** to show SQL-backed business data.
 
-## Project scope
+## Important production boundary
 
-The system is based on the proposed A to Z workflow: customer intake, service questions, quote requests, scheduling requests, centralized lead tracking, and human follow-up. Real phone calls, SMS delivery, calendar synchronization, photo intake, and production CRM integration would require access to the business's accounts and third-party communication services.
+This repository implements the application and workflow. It does not claim to reproduce Numa's proprietary software or to already control A to Z's real phone number. Live phone calls, SMS delivery, calendar synchronization, and production CRM connections require authorized access to the business accounts and third-party services.
 
-## Data
+The prototype is deliberately designed so those integrations can be added later without pretending they already exist.
 
-The app creates `atoz_powerwashing.db` locally the first time it runs. The database is ignored by Git so test/customer data is not committed.
+## Privacy
+
+Local database files, uploaded customer photos, environment files, and Streamlit secrets are ignored by Git. Do not commit real customer information to the repository.
