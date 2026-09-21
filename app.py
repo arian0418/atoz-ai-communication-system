@@ -13,14 +13,14 @@ st.markdown("""<style>
 .block-container{max-width:1200px;padding-top:1.5rem}.hero{padding:1.5rem 1.7rem;border:1px solid rgba(128,128,128,.25);border-radius:18px;margin-bottom:1rem}
 .hero h1{margin:0;font-size:2.1rem}.muted{opacity:.7}[data-testid="stMetric"]{border:1px solid rgba(128,128,128,.2);padding:14px;border-radius:14px}
 </style>""",unsafe_allow_html=True)
-st.markdown('<div class="hero"><h1>💧 A to Z Power Washing</h1><div class="muted">Customer Communication Hub • Intake • Quotes • Scheduling • Lead Tracking</div></div>',unsafe_allow_html=True)
+st.markdown('<div class="hero"><h1>💧 A to Z Power Washing</h1><div class="muted">Numa AI Implementation Prototype • Customer Communication • Quotes • Scheduling • CRM</div></div>',unsafe_allow_html=True)
 
 page=st.sidebar.radio("Workspace",["Customer Assistant","Quote & Scheduling","Owner Dashboard","Lead Details","Appointments","Conversations","Reports"])
-st.sidebar.caption("Working implementation prototype • Python + SQL")
+st.sidebar.caption("Numa AI Implementation Prototype • Python + SQL")
 
 if page=="Customer Assistant":
-    st.subheader("A to Z Customer Assistant")
-    st.caption("Answers supported questions and hands uncertain/sensitive issues to a person.")
+    st.subheader("Numa AI Customer Assistant — Prototype")
+    st.caption("Prototype of the Numa-based customer communication workflow proposed for A to Z Power Washing.")
     if "chat" not in st.session_state:
         st.session_state.chat=[("assistant","Welcome to A to Z Power Washing! How can I help?")]
     for role,msg in st.session_state.chat:
