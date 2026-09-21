@@ -70,3 +70,17 @@ The prototype is deliberately designed so those integrations can be added later 
 ## Privacy
 
 Local database files, uploaded customer photos, environment files, and Streamlit secrets are ignored by Git. Do not commit real customer information to the repository.
+
+
+## Numa inspiration
+
+The team's original proposal selected Numa AI as the basis for improving customer communication. For the implementation stage, the team took inspiration from that communication model and created its own version specifically for A to Z Power Washing.
+
+This repository is the team's implementation. It is **not Numa's proprietary software** and does not claim to modify Numa's code.
+
+## Project documentation
+
+- `docs/KNOWLEDGE_BASE.md` — approved assistant behavior and business knowledge
+- `docs/IMPLEMENTATION.md` — proposal-to-product feature mapping and demo flow
+- `docs/PRESENTATION.md` — presentation explanation and talking points
+- `docs/TEST_PLAN.md` — manual and automated testing checklist
