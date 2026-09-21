@@ -1,6 +1,14 @@
 # A to Z Power Washing — AI Customer Communication System
 
-A complete, runnable class-project implementation of the customer communication workflow proposed for A to Z Power Washing.
+A complete, runnable prototype of the customer communication workflow designed for A to Z Power Washing.
+
+## Why We Built This
+
+A to Z Power Washing is a company owned by a friend of mine. As a group, we wanted to explore how technology could help the business improve customer communication and turn more inquiries into potential jobs.
+
+We focused on the process of responding to customers, collecting information for quotes, handling scheduling requests, and keeping track of leads and conversations. We built this prototype to bring those tasks together in one system and demonstrate how AI-assisted customer communication could help the company respond to potential customers more efficiently.
+
+Our approach was inspired by the customer-communication model used by Numa AI and adapted to the needs of a power-washing business. The prototype combines customer assistance, quote intake, scheduling requests, lead management, conversation tracking, and an employee dashboard.
 
 ## Implemented features
 
