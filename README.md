@@ -1,94 +1,53 @@
-# A to Z Power Washing — AI Customer Communication System
+# A to Z Power Washing — Customer Communication System
 
-A complete, runnable prototype of the customer communication workflow designed for A to Z Power Washing.
+A full-stack prototype built for a small power-washing business to organize customer inquiries, quote requests, appointments, messages, job photos, and follow-up.
 
 ## Why We Built This
+A to Z Power Washing is a company owned by a friend of mine. Our group explored how software could make customer communication easier and keep potential jobs from getting lost between messages, quote requests, and scheduling.
 
-A to Z Power Washing is a company owned by a friend of mine. As a group, we wanted to explore how technology could help the business improve customer communication and turn more inquiries into potential jobs.
+The workflow was inspired by the customer-communication approach discussed in our Numa AI proposal, but this repository is our own implementation and does not reproduce Numa's proprietary software.
 
-We focused on the process of responding to customers, collecting information for quotes, handling scheduling requests, and keeping track of leads and conversations. We built this prototype to bring those tasks together in one system and demonstrate how AI-assisted customer communication could help the company respond to potential customers more efficiently.
-
-Our approach was inspired by the customer-communication model used by Numa AI and adapted to the needs of a power-washing business. The prototype combines customer assistance, quote intake, scheduling requests, lead management, conversation tracking, and an employee dashboard.
-
-## Implemented features
-
-### Customer side
-- Automated customer assistant for supported service, quote, photo, service-area, and scheduling questions
-- Safe human handoff for complaints, damage, emergencies, and uncertain requests
-- Quote intake with customer/contact information
-- Service selection
-- Property address and job details
-- Preferred appointment date/time
+## Features
+- React business dashboard with live SQLite data
+- Customer/lead pipeline and status updates
+- Customer detail view and internal notes
+- Quote and appointment request form
 - Multiple job-photo uploads
-- Clear distinction between a requested appointment and a confirmed appointment
-
-### Business side
-- Central owner dashboard
-- Lead pipeline: New → Contacted → Quoted → Booked → Completed / Closed
-- Detailed lead view
-- Internal follow-up notes
-- Job-photo review
-- Appointment request management
-- Central conversation history
-- CSV lead export
-- Reporting for lead status and service demand
-
-### Database
-SQLite stores:
-- leads
-- messages
-- appointments
-- photos
-- internal notes
-
-This gives the project real SQL-backed persistence without requiring a separate database server.
+- Appointment status management
+- Central message history
+- Customer assistant with human-handoff rules
+- Reports by pipeline status and requested service
+- Python/Flask API
+- SQLite persistence
 
 ## Technology
-- Python
-- Streamlit
+- React + Vite
+- Python + Flask
 - SQLite / SQL
-- pandas
+- Lucide icons
 
 ## Run on Windows
+Install Python and Node.js first. Then, from the project folder:
 
 ```
 python -m pip install -r requirements.txt
-python -m streamlit run app.py
+npm install
+npm run dev
 ```
 
-The application creates `atoz_powerwashing.db` automatically.
+`npm run dev` starts both the Python API and the Vite frontend. Open the Local URL shown by Vite, normally `http://localhost:5173`.
 
-## Recommended class demo
+## Demo flow
+1. Open Dashboard.
+2. Add a customer through New Request.
+3. Return to Dashboard and confirm the request appears.
+4. Open Customers, change the lead status, and add an internal note.
+5. Open Appointments and confirm the requested appointment.
+6. Ask the Customer Assistant about pricing or scheduling.
+7. Open Messages to see the conversation log.
+8. Open Reports to see summaries from the SQLite data.
 
-1. Open **Customer Assistant** and ask about a driveway-cleaning quote.
-2. Show that the assistant does not invent a price.
-3. Open **Quote & Scheduling**, enter a sample customer, attach a sample property photo, and submit.
-4. Open **Owner Dashboard** and show the new lead.
-5. Open **Lead Details**, add an internal note, and move the lead through the pipeline.
-6. Open **Appointments** and confirm the request.
-7. Open **Conversations** to show centralized records.
-8. Open **Reports** to show SQL-backed business data.
+## Production boundary
+This is a local prototype. It does not control A to Z's real phone number or provide live SMS, phone calls, calendar synchronization, payment processing, or production CRM connections. Those require authorized third-party accounts and production integrations.
 
-## Important production boundary
-
-This repository implements the application and workflow. It does not claim to reproduce Numa's proprietary software or to already control A to Z's real phone number. Live phone calls, SMS delivery, calendar synchronization, and production CRM connections require authorized access to the business accounts and third-party services.
-
-The prototype is deliberately designed so those integrations can be added later without pretending they already exist.
-
-## Privacy
-
-Local database files, uploaded customer photos, environment files, and Streamlit secrets are ignored by Git. Do not commit real customer information to the repository.
-
-
-## Numa inspiration
-
-The team's original proposal selected Numa AI as the basis for improving customer communication. For the implementation stage, the team took inspiration from that communication model and created its own version specifically for A to Z Power Washing.
-
-This repository is the team's implementation. It is **not Numa's proprietary software** and does not claim to modify Numa's code.
-
-## Project documentation
-
-- `docs/KNOWLEDGE_BASE.md` — approved assistant behavior and business knowledge
-- `docs/IMPLEMENTATION.md` — proposal-to-product feature mapping and demo flow
-- `docs/PRESENTATION.md` — presentation explanation and talking points
-- `docs/TEST_PLAN.md` — manual and automated testing checklist
+Do not commit real customer information, local database files, uploaded photos, environment files, or secrets.
