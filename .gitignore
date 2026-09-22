@@ -3,6 +3,10 @@ __pycache__/
 .venv/
 venv/
 .env
+.env.*
 atoz_powerwashing.db
 uploads/
 .streamlit/secrets.toml
+node_modules/
+dist/
+*.log
