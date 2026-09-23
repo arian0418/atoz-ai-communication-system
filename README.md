@@ -2,8 +2,8 @@
 
 A full-stack customer and lead management prototype for a small power-washing business. The project focuses on one practical problem: keeping customer requests, estimates, scheduling, messages, photos, and follow-up organized in one place.
 
-## Why I Built It
-A to Z Power Washing is a company owned by a friend of mine. Our group explored how software could make customer communication easier and keep potential jobs from getting lost between messages, quote requests, and scheduling.
+## About the Project
+This project was developed as part of a team effort to explore how software could improve customer communication for A to Z Power Washing. Our group focused on the challenges of keeping customer requests, quotes, appointments, messages, and follow-ups organized in one place. We designed and developed a system that brings these parts of the customer workflow together into a single application.
 
 The workflow was inspired by the customer-communication problem discussed in our Numa AI proposal, but this repository is our own implementation. It does not reproduce Numa's proprietary software or claim to connect to Numa.
 
